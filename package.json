@@ -1,0 +1,32 @@
+{
+  "name": "gitbook-plugin-git-summary",
+  "description": "Display a summary of Git contributions at the bottom of each pages",
+  "main": "index.js",
+  "browser": "./_assets/plugin.js",
+  "version": "0.0.0",
+  "dependencies": {
+    "gitbook-core": "^4.0.0",
+    "gitty": "^3.5.0",
+    "simple-git": "^1.54.0"
+  },
+  "devDependencies": {
+    "gitbook-plugin": "^4.0.0",
+    "eslint": "3.7.1",
+    "eslint-config-gitbook": "1.4.0"
+  },
+  "engines": {
+    "gitbook": ">=4.0.0-alpha.0"
+  },
+  "scripts": {
+    "build-js": "gitbook-plugin build ./src/index.js ./_assets/plugin.js",
+    "prepublish": "npm run build-js"
+  },
+  "homepage": "https://github.com/GitbookIO/plugin-git-summary",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GitbookIO/plugin-git-summary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GitbookIO/plugin-git-summary/issues"
+  }
+}
