@@ -7,6 +7,7 @@
   "dependencies": {
     "gitbook-core": "^4.0.0",
     "gitty": "^3.5.0",
+    "gravatar": "^1.5.2",
     "simple-git": "^1.54.0"
   },
   "devDependencies": {

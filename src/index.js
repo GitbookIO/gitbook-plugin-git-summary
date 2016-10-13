@@ -1,11 +1,8 @@
 const GitBook = require('gitbook-core');
+const GitSummary = require('./components/GitSummary');
 
 module.exports = GitBook.createPlugin({
-    activate: (dispatch, getState) => {
-        // Dispatch initialization actions
-    },
-    deactivate: (dispatch, getState) => {
-        // Dispatch cleanup actions
-    },
-    reduce: (state, action) => state
+    activate: (dispatch, getState, { Components }) => {
+        dispatch(Components.registerComponent(GitSummary, { role: 'page:footer' }));
+    }
 });

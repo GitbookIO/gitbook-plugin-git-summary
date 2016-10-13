@@ -1,12 +1,19 @@
 /* eslint-disable no-var, object-shorthand */
 var Q = require('q');
+var uniq = require('uniq');
 var Git = require('simple-git');
+var gravatar = require('gravatar');
 
 function getAuthor(commit) {
     return {
-        name: commit.author_name,
-        email: commit.author_email
+        name:   commit.author_name,
+        email:  commit.author_email,
+        avatar: gravatar.url(commit.author_email, { protocol: 'https' })
     };
+}
+
+function compareAuthor(a, b) {
+    return a.email === b.email ? 0 : 1;
 }
 
 module.exports = {
@@ -31,7 +38,7 @@ module.exports = {
                         sha:     commits.latest.hash,
                         date:    commits.latest.date,
                         message: commits.latest.message,
-                        authors: commits.all.map(getAuthor)
+                        authors: uniq(commits.all.map(getAuthor), compareAuthor)
                     })
                 );
 
