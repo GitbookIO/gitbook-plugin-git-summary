@@ -21,7 +21,7 @@ const GitSummary = React.createClass({
         const commitURL = github ? `${github}/commit/${sha}` : '#';
 
         return (
-            <div className="GitSummary-Container">
+            <GitBook.Panel className="GitSummary-Container">
                 <GitBook.ImportCSS href="gitbook/git-summary/plugin.css" />
 
                 <GitBook.FlexLayout className="Toolbar">
@@ -36,7 +36,7 @@ const GitSummary = React.createClass({
                         </div>
                     </GitBook.FlexBox>
                 </GitBook.FlexLayout>
-            </div>
+            </GitBook.Panel>
         );
     }
 });
