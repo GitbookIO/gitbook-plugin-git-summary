@@ -5,7 +5,7 @@ const GitAuthor = require('./GitAuthor');
 
 const GitSummary = React.createClass({
     propTypes: {
-        page: GitBook.Shapes.Page,
+        page:   GitBook.PropTypes.Page,
         github: React.PropTypes.string
     },
 
